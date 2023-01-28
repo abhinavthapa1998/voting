@@ -46,4 +46,14 @@ contract Ballot {
         sender.vote = proposal;
         proposals[proposal].voteCount += sender.weight;
     }
+
+    function winningProposal() public view returns (uint256 _winningProposal) {
+        uint256 winningVoteCount = 0;
+        for (uint256 i = 0; i < proposals.length; i++) {
+            if (proposals[i].voteCount > winningVoteCount) {
+                winningVoteCount = proposals[i].voteCount;
+                _winningProposal = i;
+            }
+        }
+    }
 }

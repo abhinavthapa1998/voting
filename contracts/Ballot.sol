@@ -28,7 +28,7 @@ contract Ballot {
         }
     }
 
-    function giveRightToVote(address voter) public {
+    function giveRightToVote(address voter) public view {
         require(
             msg.sender == chairperson,
             "Only the Chairperson can give access to vote."
@@ -55,5 +55,9 @@ contract Ballot {
                 _winningProposal = i;
             }
         }
+    }
+
+    function winningName() public view returns (bytes32 _winningName) {
+        _winningName = proposals[winningProposal()].name;
     }
 }

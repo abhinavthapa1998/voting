@@ -1,2 +1,3 @@
 # Voting Smart Contract
-### giveRightToVote, Vote, winningProposal, winningName
+## Functions -
+### giveRightToVote, Vote, winningProposal, winningName 
